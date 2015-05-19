@@ -45,6 +45,31 @@ var testCases = [
       'sub/afileinsub.txt',
     ]
   },
+  {
+    glub: ['**/*', '!sub/**/*.txt'],
+    desc: 'can match stars recursively, with ignores',
+    matches: [
+      'another.txt',
+      'file.txt',
+      'index.js',
+      'noext',
+      'sub',
+      'sub/subsub',
+      'sub/subsub/subsubyo.js'
+    ]
+  },
+  {
+    glub: ['**/*', '!sub/**/*.txt', '!sub/**/*.js'],
+    desc: 'can handle mutiple ignores',
+    matches: [
+      'another.txt',
+      'file.txt',
+      'index.js',
+      'noext',
+      'sub',
+      'sub/subsub',
+    ]
+  },
 ];
 
 describe('glub', function() {
