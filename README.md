@@ -6,13 +6,12 @@ glub
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Downloads][downloads-image]][downloads-url]
 
-Small wrapper around glob to allow mutiple args, useful for consuming mutiple command line args
+Small wrapper around [`glob`](https://github.com/isaacs/node-glob) to allow mutiple args, useful for consuming mutiple command line args
 
 ```js
 var glub = require('glub');
 
-
-// process.argv.slice(2) === ['node', 'index', '**/*.js', '!node_modules/**/*.js']
+// process.argv === ['node', 'index', '**/*.js', '!node_modules/**/*.js']
 var files = glub.sync(process.argv.slice(2));
 
 glub(process.argv.slice(2), function(err, files) {
