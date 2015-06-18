@@ -15,7 +15,7 @@ var glub = require('glub');
 var files = glub.sync(process.argv.slice(2));
 
 glub(process.argv.slice(2), function(err, files) {
-  
+
 });
 ```
 
